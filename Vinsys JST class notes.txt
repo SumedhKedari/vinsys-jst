@@ -1,0 +1,406 @@
+Java released by sun microsystems in 1995
+Object oriented language 
+Jdk, jre, jvm
+Features: 
+1. Platform independent
+2. Oop language 
+3. Secure
+4. Can manage large databases
+5. Automatic memory management (Garbage Collector)
+6. Platform independent
+
+What is JDK, JRE, JVM?
+Java Development Kit: Helps in writing the code.
+Java Virtual Machine: Converts it into a bytecode, changes extension to .class, basically a compiler. Part of JDK.
+Java Runtime Environment: Contains some libraries that can be used in the code. Part of JDK.
+
+Code Rules: 
+1. Class name and file name should be the same.
+2. Declaring class: "public class 'classname' "
+example code: public class Hello World{ --------> Primary class
+	public static void main (String[] args){  ---------> Entry point of the code
+		System.out.println("Hello Sumedh");  -------> Print Statement
+		}
+}
+ System: built in Java class that contains useful tools for our programs.
+out: output
+println: print line
+A. Num + String = String
+B. Code is read from L to R----> if operators from both stages are present, the compiler will first apply BODMAS Rule before going from L to R.
+example: s.o.p.ln("Hello"+70*10)= Hello700
+C. String and '*,%' gives error cuz string can only be concatenated, not operated on.
+BODMAS RULE:
+	  1.()
+	 -2./ (division)
+Stage 1	|
+	 -3.* (doesn't matter the order in which you solve either of them, answer will be the same)
+
+	 -4.+
+Stage 2	|
+	 -5.- (doesn't matter the order in which you solve either of them, answer will be the same)
+
+class is a blueprint or a template.
+each file has one primary class named after the file.
+
+single line comment: //
+multi line comment: /* ... */
+multi class comment: /** * */ (for commenting outside a class) (Javadoc, the actual name of this type of commenting)
+
+compiler reads from L to R
+if there are operators, it moves from L to R.
+when num+string are concatenating in println statement, the output will be string datatype
+when string+num are concatenating in println statement, 
+1. s.o.pln(70+"Hello")= 70Hello
+2. s.o.pln("Hello"+70)=Hello70
+3. s.o.pln(70+10+"Hello")= 80Hello
+4. s.o.pln("Hello"+70+10)=Hello7010
+
+
+Data Types: 
+Primitive
+1. num
+2. char
+3. Boolean
+
+Non-Primitive
+int and double (also these are the default datatypes when not defined).
+string
+
+s.o.p(3x2)=6
+s.o.p("3x2")= 3x2
+
+Codecademy page no5 to continue from tomorrow
+
+Variable:
+acts as container to store data types.
+Declaration:
+
+Method 1:
+'Datatype var_name = var_value;'
+int x = 10;
+string name = "sumedh";
+
+method 2: Initialising
+'Datatype var_name;'
+'var_name = var_value;'
+int a;
+string b;
+a = 10;
+b = "good";
+
+int x;			int x;
+x = 30;			x = 30;
+s.o.p(x);		s.o.p("x");
+
+O/P = 30		O/P = x
+
+Rule: variable declared once cannot be declared again in the same code.
+
+examples: 
+
+1. int x;
+x=30;
+int x=40;
+s.o.p(x);
+O/P = Error. 
+
+2. int x;
+        x = 30;
+        System.out.print(x);
+        int x = 40;
+        System.out.print(x);
+
+O/P = Line 7: error: variable x is already defined in method main(String[]) [in Main.java]
+        int x = 40;
+
+
+3. int x;
+        x = 30;
+        System.out.print(x);
+        String x = "40";
+        System.out.print(x);
+
+O/P = Line 7: error: variable x is already defined in method main(String[]) [in Main.java]
+        String x = "40";
+
+
+4. int x; 
+        x = 30;
+        x = 40;
+        System.out.print(x);
+O/P = 40
+this happened because here we did not initialise the variable again by writing "int x = 40;". Instead we just replaced its value in the memory from 30 to 40.
+
+
+Basic needs for an application is by gathering input and output. Above is the output part. Now we shall go through the input part.
+
+Syntax: 
+a. for string:
+Scanner sc = new Scanner(System.in);
+String str = sc.next();
+
+b. for int:
+Scanner sc = new Scanner(System.in);
+int x = sc.nextInt();
+
+For Multiple inputs:
+Scanner sc = new Scanner(System.in);
+int w = sc.nextInt();
+int x = sc.nextInt();
+int y = sc.nextInt();
+int z = sc.nextInt();
+
+example: 
+Scanner sc = new Scanner(System.in);
+        System.out.println("Enter 5 Numbers:");
+        int w = sc.nextInt();
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+        int z = sc.nextInt();
+        System.out.print("Numbers from user are: \n");
+        System.out.print(w + "\n");
+        System.out.print(x + "\n");
+        System.out.print(y + "\n");
+        System.out.print(z);
+
+O/P= 
+Enter 5 Numbers:
+10
+20
+30
+40
+Numbers from user are: 
+10
+20
+30
+40
+
+
+Naming Conventions for variables:
+1. up, lc,[special characters], num. only '$' and '_' can be used
+2. cant start with var name, with any num.
+3. no whitespaces when declaring variable name.
+4. cannot use reserved names. eg: int, Boolean, class, scanner.
+
+
+Num has 4 subtypes:
+a. int (-2^31 to 2^31 -1)
+b. byte (-2^7 to 2^7 -1) (-128 to 127)
+c. short (-2^15 to 2^15 -1) (-32768 t 32767)
+d. long (-2^63 to 2^63 -1)
+
+example:
+int a = 30;
+byte x = 40b;
+long y= 30L;
+short z = 50s;
+
+
+Typecasting:
+type casting takes place in the RAM and not in the ALU. the ALU takes only the datatype and the value stored in a variable, it does not to which variable a certain value belongs to.
+I. int datatype
+1. Explicit (without force)
+2. Implicit (with force)
+
+
+a. when typecasting from bigger unit to smaller unit, it happens randomly.
+b. when typecasting from smaller unit to bigger unit, it happens normally.
+
+examples:
+1. Implicit:
+byte x = 30;
+int y = x;
+I/P =
+	byte x = 30;
+        int y = x;
+        System.out.print(y);
+
+O/P = 30 
+
+faced error when trying to convert from 'long' to 'int'. no error for 'short' to 'int'.
+
+
+
+2. Explicit:
+int y = 98;
+byte s = (int)y;
+I/P = 
+	byte x = 30;
+        int y = x;
+        System.out.print(y);
+
+O/P = 98
+
+
+steps to calculate byte number:
+input x, range of byte -128 to 127(total 256).
+1. calculate x mod 256
+2. if answer is less than 127, return value.
+3. if answer is more than 127, calculate 'answer-256' and return that value.
+eg:
+x = 175
+175 mod 256 = 175, 175>127, so
+175-256 = -81.
+return -81.
+
+->double has greater range than float. It can save up to 15 digits after decimal point.
+-> float can save up to 8 digits after decimal point.
+      -int -> -2x10^9 to 2x10^9
+range|
+      -long-> -2x10^18 to 2x10^18
+for whole numbers the default datatype is int. for decimal numbers, the default datatype is double.
+
+typecasting from double to float is explicit, the vice-versa is implicit.
+
+eg:
+1. float x = 1.55;		2. double x = 1.888888888;
+   double y = x;		   float y = (float) x;
+O/P= 				 O/P= random number. (but i feel it will store the first 8 digits, inclusive of before and the decimal point, count of digit begins from before decimal 					point).
+
+
+-> Operation Rules:
+1. 
+int x = 30;
+int y = 2;
+s.o.p(x*y);
+O/P= 60 (int)
+
+2. 
+int x = 30;
+double y = 53.33;
+s.o.p(x+y);
+O/P= 83.33 (double)
+
+3. 
+int x = 300;
+long y = 3000;
+s.o.p(x*y);
+O/P= 900000(long)
+
+4.
+double x = 33.33;
+float y = 3.33;
+s.o.p(x+y);
+O/P= 36.66 (double)
+
+5.
+double x = 33.33;
+long y = 50;
+s.o.p(x+y);
+O/P= 83.33(double)
+
+Rules in effect: 
+1.when there is operation between decimal and non decimal number, the datatype of the answer will always be the datatype of the decimal number. (example 2,5)
+2.when there is operation between large capacity and small capacity datatype, the datatype of the answer will always be the datatype of the larger capacity number. (example 3)
+
+# ALU (Arithmetic Logical Unit)-> 
+Performs the mathematical operations.
+ex:
+int x = 30; | x = 10^5;
+int y = 40; | y = 10^5;
+int z = x+y; | z = x*y;
+
+RAM:					ALU:
+stores the values.			performs the mathematical operation. ALU only knows the numerical value and the datatype of that value. It does not know the variable in which you x(30), y(40)| 10^2, 10^2		have stored it.
+z(70) | z(random value)			calculation= 30(int) + 40(int)=70(int) | 10^5(int)*10^5(int)= RV(it gives random value because it exceeds the range of int).
+
+int x = 100000;
+int y = 100000;
+long z = (long)(x*y);
+here it gives random number because no typecasting is performed. it simply calculates the value and since it exceeds int datatype, it gives random number.
+
+int x = 100000;
+int y = 100000;
+long z = (long) x*y;
+System.out.print(z); 
+here it gives exact o/p because when ALU receives the numbers, it receives x after typecasting it to long, and since between long and int, long is the bigger datatype, it gives output in long datatype, hence the exact value is given out.
+
+
+S.o.p(25/3);
+O/P = 8(int) (it will stop calculating after getting the first digit after dividing because the datatypes of 25 & 3 is int respectively, even if the mathematical calc is 8.3333, since output generated will also be an int datatype, i.e., 8, it will not bother to calculate further since the datatypes are not defined explicitly, so it will consider it int value.)
+
+
+Whitespaces and Semicolons:
+Whitespaces actually have no effect in java because the compiler will understand that a statement ends when it interprets a semicolon. Whitespaces just make the code readable for a human being.
+
+Semicolons are used to mark the end of a statement (a line that does a particular task only.)
+We use curly braces '{}' to mark the scope of classes and methods, we do not place semicolons after curly braces.
+
+
+
+Operators
+
+Primitive: =,-,/,*
+Relational: <,>,<=,>=,==,!=
+Assignment: =
+
+
+Conditional Statements:
+
+1.if:
+if (condition){
+s.o.p(statement1);}
+
+2.if else:
+if (condition){
+s.o.p("statement1");
+} else {
+s.o.p("statement2");}
+
+
+3.switch:
+
+
+4.else if: 
+if(condition1){
+s.o.p(statement1);
+} else if(condition2){
+s.o.p(statement2);}
+
+it is most preferred because if the first condition is true, it does not bother checking the remaining conditions.
+
+
+Logical: &&, ||
+
+&&= False dominated operator. Both conditions must be true for the code to execute.
+
+||= True dominated. Either of the 2 conditions must be true for the code to execute.
+
+
+Loops:
+
+1. while(condition){}
+
+n = 1;
+while(n>=5; N++){
+s.o.p("Hello")}
+
+
+
+
+2. for(int i=0; i<n; i++){}
+
+3. do while:
+do {}
+while()
+
+
+
+Git & GitHub:
+
+Git Bash Commands:- 
+ls: shows contents of the folder we are in.
+git add "file name": adds the git file to the working area. files in working area are yet to be committed.
+git init:  to initialize git, first command to use git.
+git status: gives current status of files.
+git commit -am "comment": to commit the changes made to any file.
+git log: gives a log update of all changes made. has an assigned hash code to each change to a file made.
+git checkout (hash code) "file name": to revoke/rollback accidental commits made.a
+git checkout --detach "hash code": to remove a log entry, using its respective hash code.
+git branch --show-current: to show the current branch we are attached to.
+git branch: to show all branches in the directory.
+git checkout (branch name): to re-attach 'Head' to the desired branch.
+
+
+
+~ HTML (20-03-25)
